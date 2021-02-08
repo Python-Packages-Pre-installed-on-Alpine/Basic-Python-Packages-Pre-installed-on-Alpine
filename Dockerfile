@@ -1,6 +1,7 @@
 FROM alpine:edge
 
 ARG FIX_ALL_GOTCHAS_SCRIPT_LOCATION
+ARG ETC_ENVIRONMENT_LOCATION
 ARG CLEANUP_SCRIPT_LOCATION
 
 # Depending on the base image used, we might lack wget/curl/etc to fetch ETC_ENVIRONMENT_LOCATION.
