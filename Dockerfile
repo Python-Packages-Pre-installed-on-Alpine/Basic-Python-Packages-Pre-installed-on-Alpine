@@ -11,6 +11,7 @@ ADD $ETC_ENVIRONMENT_LOCATION .
 RUN set -o allexport \
     && . ./set_variables_in_CI.sh \
     && set +o allexport \
+    && sed -i -e 's/https/http/' /etc/apk/repositories \
     && apk add --no-cache python3-dev py3-pip py3-wheel git openssh-client \
     && ln -s /usr/bin/python3 /usr/bin/python \
     && python -m pip install --no-cache-dir --upgrade pip certifi
