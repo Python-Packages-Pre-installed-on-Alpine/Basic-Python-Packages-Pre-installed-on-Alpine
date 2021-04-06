@@ -14,7 +14,7 @@ ADD $CLEANUP_SCRIPT_LOCATION .
 RUN set -o allexport \
     && . ./fix_all_gotchas.sh \
     && set +o allexport \
-    && sed -i -e 's/https/http/' /etc/apk/repositories \
+    # && sed -i -e 's/https/http/' /etc/apk/repositories \
     && apk add --no-cache python3-dev py3-pip py3-wheel git openssh-client \
     && ln -s /usr/bin/python3 /usr/bin/python \
     # When fix_all_gotchas.sh ran without Python installed, it didn't set up pip,
