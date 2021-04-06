@@ -16,6 +16,7 @@ RUN set -o allexport \
     && set +o allexport \
     # && sed -i -e 's/https/http/' /etc/apk/repositories \
     && apk add --no-cache python3-dev py3-pip py3-wheel git openssh-client \
+    && (ls /usr/bin/python || exit 1) \
     && ln -s /usr/bin/python3 /usr/bin/python \
     # When fix_all_gotchas.sh ran without Python installed, it didn't set up pip,
     # because it didn't find pip.
